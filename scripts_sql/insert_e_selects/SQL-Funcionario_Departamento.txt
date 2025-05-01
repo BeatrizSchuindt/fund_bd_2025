@@ -1,0 +1,30 @@
+-- Consulta SQL
+SELECT *
+FROM departamento;
+
+SELECT *
+FROM funcionario;
+
+-- Inserção de dados na tabela Departamento
+INSERT INTO departamento
+	(id_departamento, nome_departamento, sigla, ramal, responsavel, localizacao, orcamento)
+VALUES
+	(2, 'Financeiro', 'FIN', '4521', 'Lair Figueiredo', 'Rua M, 19', 100000.11),
+	(3, 'Gestão de Pessoas', 'GP', '3647', 'Valdir Mendonça', 'Rua do Limoeiro, 59', 21452.21),
+	(4, 'Jurídico', 'JUD', '8752', 'Lucas Viana', 'Rua Xavante, 32', 42151.30),
+	(5, 'Almoxarifado', 'ALMOX', '1221', 'Janaína Almeida', 'Rua América, 14', 12114.21);
+	
+-- Inserção de dados na tabela Funcionario
+INSERT INTO funcionario
+	(id_funcionario, nome, cpf, dt_nasc, sexo, endereco, estado_civil, email, telefone, num_matricula, dt_admissao, salario, cargo, id_departamento)
+VALUES
+	(1, 'Ana Beatriz', '12345678911', '20/07/2005', 'F', 'Rua dos Milagres, 29', 'Solteiro', 'anabeatriz@gmail.com', '65999528404', '1', '09/01/2022', 6000, 'Desenvolvedora Web', 1);
+ 	(2, 'Carlos Eduardo', '98765432100', '15/04/1990', 'M', 'Av. Brasil, 123', 'Casado', 'carlos.edu@gmail.com', '65991234567', '2', '10/03/2021', 5800, 'Analista de Sistemas', 1),
+    (3, 'Mariana Silva', '32165498700', '08/11/1985', 'F', 'Rua do Sol, 45', 'Solteiro', 'mariana.silva@gmail.com', '65998123456', '3', '05/02/2020', 7200, 'Contadora', 2),
+    (4, 'João Pedro', '65432178900', '02/06/1992', 'M', 'Av. das Flores, 88', 'Casado', 'joao.pedro@gmail.com', '65999887766', '4', '22/07/2023', 6700, 'Analista Financeiro', 2),
+    (5, 'Luciana Torres', '78945612300', '30/09/1988', 'F', 'Rua Bela Vista, 12', 'Solteiro', 'luciana.torres@gmail.com', '65998452311', '5', '01/12/2021', 5600, 'Analista de RH', 3),
+    (6, 'Rafael Lima', '14785236900', '11/01/1983', 'M', 'Rua Central, 77', 'Casado', 'rafael.lima@gmail.com', '65998334455', '6', '15/08/2022', 6100, 'Recrutador', 3),
+    (7, 'Fernanda Costa', '96385274100', '24/05/1987', 'F', 'Av. Legalidade, 10', 'Divorciado', 'fernanda.costa@gmail.com', '65997654321', '7', '03/04/2019', 8500, 'Advogada', 4),
+    (8, 'Thiago Andrade', '25896314700', '13/03/1991', 'M', 'Rua da Justiça, 91', 'Casado', 'thiago.andrade@gmail.com', '65997483920', '8', '19/06/2020', 7900, 'Assistente Jurídico', 4),
+    (9, 'Juliana Rocha', '36925814700', '07/07/1995', 'F', 'Rua dos Correios, 45', 'Solteiro', 'juliana.rocha@gmail.com', '65996781234', '9', '27/03/2022', 4000, 'Auxiliar de Almoxarifado', 5),
+    (10, 'Bruno Martins', '95175345600', '29/08/1986', 'M', 'Rua Industrial, 56', 'Casado', 'bruno.martins@gmail.com', '65996677889', '10', '12/11/2023', 4500, 'Estoquista', 5);
