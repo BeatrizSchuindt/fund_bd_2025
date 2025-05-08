@@ -1,0 +1,27 @@
+SELECT sigla, departamento.nome_departamento, funcionario.nome, email, telefone
+FROM departamento, funcionario
+WHERE funcionario.id_departamento = departamento.id_departamento
+  AND funcionario.id_departamento in (1,3) --Pesquisa o id_departamento 1 e 3
+ORDER BY 1,3
+
+-- ATV AULA 09 - PARTE 02 - COM DICAS DA PROFESSORA
+-- Consulta de funcionários do sexo 'F' - feminino
+SELECT 	sigla as "Sigla do Departamento", 
+		d.nome_departamento as "Nome do Departamento", 
+		f.nome as "Nome do Funcionário", 
+		salario as "Salário do Funcionário"
+FROM departamento d, funcionario f
+WHERE d.id_departamento = f.id_departamento
+  AND f.sexo = 'F'
+ORDER BY 3; -- ordenando pelo nome das funcionárias
+
+-- Consulta de Funcionário que trabalham no departamento "Financeiro" - id 2
+SELECT 	sigla as "Sigla do Departamento", 
+		d.nome_departamento as "Nome do Departamento", 
+		f.nome as "Nome do Funcionário", 
+		email as "Email do Funcionário", 
+		telefone as "Telefone do Funcionário"
+FROM departamento d, funcionario f
+WHERE f.id_departamento = d.id_departamento
+  AND f.id_departamento = 2 --departamento "Financeiro"
+ORDER BY 1,3
