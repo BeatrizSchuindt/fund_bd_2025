@@ -1,0 +1,16 @@
+--atualizar o nome do responsável do departamento 1
+UPDATE departamento
+	SET responsavel = 'Karla Lilliam'
+	WHERE id_departamento = 1;
+
+--atualizar a sigla do departamento 3
+UPDATE departamento
+	SET sigla = 'GESP' --antes era GP
+	WHERE id_departamento = 3;
+
+--atualizar o ramal do departamento 4
+UPDATE departamento
+	SET ramal = '1478' --antes era 8752
+	WHERE id_departamento = 4;
+	
+SELECT * FROM departamento;

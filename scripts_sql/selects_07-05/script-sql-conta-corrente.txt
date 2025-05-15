@@ -1,0 +1,28 @@
+--SELECT 1 - Consulta de 2 tabelas 
+
+SELECT  
+  c.nome as "Nome do Cliente", 
+  c.cidade as "Cidade", 
+  cc.id_conta as "Número da Conta", 
+  cc.vlr_saldo as "Saldo da Conta" 
+FROM  
+	cliente c, conta_corrente cc 
+WHERE  
+	c.id_cliente = cc.id_cliente 
+ORDER BY 1;
+
+
+
+--SELECT 2 - Consulta de 3 tabelas 
+
+ SELECT  
+ c.nome AS "Nome do Cliente", 
+ e.vlr_emprestimo AS "Valor do Empréstimo", 
+ e.qtd_parcela AS "Parcelas", 
+ e.status_emprestimo AS "Status" 
+FROM  
+ cliente c, conta_corrente cc, emprestimo e 
+WHERE  
+ c.id_cliente = cc.id_cliente 
+ AND cc.id_conta = e.id_conta 
+ORDER BY 1;

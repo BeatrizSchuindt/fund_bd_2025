@@ -1,0 +1,60 @@
+-- Consulta de Médico que começam com a especialidade de "Cardio"
+SELECT 	m.especialidade "Especialidade Médica",
+		m.nome "Médico",
+		p.nome "Paciente"
+FROM paciente p, consulta c, medico m
+WHERE p.id_paciente = c.id_paciente
+  AND m.id_medico = c.id_medico
+  AND m.especialidade LIKE 'Cardio%' 
+ORDER BY 1,2,3; 
+
+-- OBS: O % pode vir em qualquer ordem do varchar
+
+DANDO ERRO :
+-- Consulta de Pacientes que tem tipo sanguíneo "O" - positivo ou negativo
+SELECT 	p.nome as "Paciente", 
+		p.cpf as "CPF do Paciente" 
+		p.tp_sanguineo as "Tipo Sanguíneo"
+		p.telefone as "Telefone do Paciente"
+FROM paciente p
+WHERE p.tp_sanguineo LIKE 'O%'
+ORDER BY 1
+
+SELECT * FROM paciente;
+
+
+******* PARA ENVIO ***************
+-- 3 CONSULTAS - (2 envolvendo 2 tabelas; 1 envolvendo 3 tabelas);
+-- Médicos que vão atender na sala 103
+SELECT 	m.nome as "Médico", 
+		m.especialidade as "Especialidade", 
+		c.localizacao as "Sala da Consulta",
+		c.dt_consulta as "Data",
+		c.hr_consulta as "Hora"
+FROM medico m, consulta c
+WHERE m.id_medico = c.id_medico
+  AND c.localizacao = 'Sala 103'
+ORDER BY 1,3
+
+-- Pacientes que precisam fazer o exame "Raio-X"
+SELECT 	p.nome as "Paciente", 
+		p.cpf as "CPF", 
+		c.exame as "Exame solicitado",
+		c.dt_consulta as "Data da Consulta"
+FROM paciente p, consulta c
+WHERE p.id_paciente = c.id_paciente
+  AND c.exame = 'Raio-X'
+ORDER BY 1,3
+
+
+-- Consulta de Pacientes que serão atendidos no dia 02/05/2025
+SELECT 	m.nome as "Médico", 
+		m.especialidade as "Especialidade", 
+		c.dt_consulta as "Data da Consulta", 
+		p.nome as "Paciente", 
+		p.telefone as "Telefone do Paciente"
+FROM medico m, consulta c, paciente p
+WHERE m.id_medico = c.id_medico
+  AND p.id_paciente = c.id_paciente
+  AND c.dt_consulta = '02/05/2025'
+ORDER BY 1,3

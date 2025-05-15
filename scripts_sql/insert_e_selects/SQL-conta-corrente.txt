@@ -1,0 +1,45 @@
+ INSERT INTO cliente  
+(id_cliente, nome, dt_nasc, telefone, perfil_financeiro, logradouro, 
+cidade, uf) 
+VALUES 
+(1, 'João VitorSilva', '1985-04-10', '65991112233', 'Investidor', 'Rua 
+A, 101', 'Cuiabá', 'MT'), 
+(2, 'Maria Oliveira', '1990-07-22', '65992223344', 'Moderado', 'Av. B, 
+202', 'Várzea Grande', 'MT'), 
+(3, 'Carlos Pereira', '1978-12-05', '65993334455', 'Conservador', 'Rua 
+C, 303', 'Rondonópolis', 'MT');
+
+
+INSERT INTO agencia  
+(id_agencia, nome, cnpj, gerente, logradouro, cidade, uf) 
+VALUES 
+(1, 'Agência Centro', '12345678000101', 'Fernanda Souza', 'Rua 
+Central, 10', 'Cuiabá', 'MT'), 
+(2, 'Agência Leste', '98765432000199', 'Marcos Vinicius Lima', 'Av. 
+Leste, 88', 'Várzea Grande', 'MT'), 
+(3, 'Agência Oeste', '45678912000155', 'Paula Fernandes', 'Rua Oeste, 
+22', 'Rondonópolis', 'MT'); 
+
+
+ INSERT INTO conta_corrente  
+(id_conta, senha, dt_criacao, vlr_limite, vlr_saldo, id_cliente, 
+id_agencia) 
+VALUES 
+(1, 'senha123', '2022-01-10', 5000.00, 2000.00, 1, 1), 
+(2, 'senha234', '2022-02-15', 3000.00, 1500.00, 1, 2), 
+(3, 'senha345', '2022-03-20', 4000.00, 2500.00, 2, 1), 
+(4, 'senha456', '2022-04-25', 6000.00, 3000.00, 2, 3), 
+(5, 'senha567', '2022-05-30', 2000.00, 1000.00, 3, 2), 
+(6, 'senha678', '2022-06-05', 4500.00, 3500.00, 3, 3);
+
+
+ INSERT INTO emprestimo  
+(id_emprestimo, qtd_parcela, vlr_emprestimo, percentual_juros, 
+status_emprestimo, dt_efetivacao, dt_encerramento, id_conta) 
+VALUES 
+(1, 12, 10000.00, 2.5, 'Ativo', '2025-01-10', '2026-01-10', 1), 
+(2, 24, 15000.00, 2.0, 'Ativo', '2025-02-15', '2027-02-15', 2), 
+(3, 6, 5000.00, 3.0, 'Encerrado', '2025-03-20', '2025-09-20', 3), 
+(4, 18, 12000.00, 1.8, 'Ativo', '2025-04-25', '2026-10-25', 4), 
+(5, 9, 7000.00, 2.2, 'Atrasado', '2025-05-30', '2026-02-28', 5), 
+(6, 36, 20000.00, 1.5, 'Ativo', '2025-06-05', '2028-06-05', 6); 
